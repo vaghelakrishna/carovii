@@ -6,95 +6,156 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden py-16 md:py-24">
 
-      {/* Background Blur */}
-      <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-300/20 blur-[120px]" />
+      {/* Soft Background */}
+      <div className="absolute left-1/2 top-0 -z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-[#8B5CF6]/10 blur-[130px]" />
+      <div className="absolute right-0 top-20 -z-10 h-[300px] w-[300px] rounded-full bg-pink-200/20 blur-[120px]" />
 
       <Container>
 
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto flex max-w-4xl flex-col items-center text-center"
+          transition={{ duration: .6 }}
+          className="mx-auto flex max-w-5xl flex-col items-center text-center"
         >
 
           {/* Badge */}
 
-          <div className="mb-6 flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-medium text-violet-700">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#E9E2FF] bg-white px-5 py-2 shadow-sm">
 
-            <Sparkles size={16} />
 
-            Free • Private • No Watermark
+            <span className="text-sm font-medium text-slate-700">
+              Free • No Watermark • Browser Based
+            </span>
 
           </div>
 
           {/* Heading */}
 
-          <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-7xl">
+          <div className="mt-10 space-y-2">
 
-            Create Beautiful
+            <h1
+              className="
+          font-['Fraunces']
+          text-5xl
+          font-black
+          leading-[0.92]
+          tracking-[-0.05em]
+          text-[#19181D]
+          md:text-7xl
+          lg:text-[84px]
+        "
+            >
+              Design your
+            </h1>
 
-            <span className="block bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1
+              className="
+          font-['Fraunces']
+          text-5xl
+          font-black
+          leading-[0.92]
+          tracking-[-0.05em]
+          text-[#5B21B6]
+          md:text-7xl
+          lg:text-[84px]
+        "
+            >
+              Carousel beautifully.
+            </h1>
 
-              Instagram Carousels
+          </div>
 
-            </span>
+          {/* Quote */}
 
-          </h1>
-
-          {/* Subtitle */}
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-
-            Split images and videos into perfectly aligned Instagram
-            carousel slides — right inside your browser.
-
+          <p
+            className="
+        mt-8
+        font-['Cormorant_Garamond']
+        text-2xl
+        italic
+        leading-tight
+        text-[#47425B]
+        md:text-3xl
+      "
+          >
+            Don't crop your story.
+            <br />
+            Split it beautifully.
           </p>
 
           {/* CTA */}
 
-          <button
-            className="
-            mt-10
-            rounded-2xl
-            bg-gradient-to-r
-            from-violet-600
-            to-indigo-600
-            px-8
-            py-4
-            text-lg
-            font-semibold
-            text-white
-            shadow-xl
-            transition-all
-            hover:-translate-y-1
-            hover:shadow-2xl
-          "
-          >
-            Start Creating
-          </button>
+          {/* <div className="mt-12 flex flex-wrap justify-center gap-4">
 
-          {/* Small Features */}
+            <button
+              className="
+          rounded-2xl
+          bg-[#5B21B6]
+          px-8
+          py-4
+          font-semibold
+          text-white
+          shadow-lg
+          transition-all
+          duration-300
+          hover:-translate-y-1
+          hover:bg-[#4C1D95]
+        "
+            >
+              Start Creating
+            </button>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <button
+              className="
+          rounded-2xl
+          border
+          border-[#E7E3F3]
+          bg-white
+          px-8
+          py-4
+          font-semibold
+          text-[#3C3652]
+          transition
+          hover:bg-[#F8F6FF]
+        "
+            >
+              View Demo
+            </button>
+
+          </div> */}
+
+          {/* Features */}
+
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
 
             {[
-              "Images",
-              "Videos",
-              "High Quality",
-              "Instant Download",
+              "Instant Split",
+              "HD Export",
+              "Unlimited",
+              "Privacy First",
+              "No Upload Limit",
             ].map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm"
+                className="
+            rounded-full
+            border
+            border-[#ECEAF3]
+            bg-white
+            px-4
+            py-2
+            text-sm
+            font-medium
+            text-slate-600
+            shadow-sm
+          "
               >
                 {item}
               </span>
             ))}
 
           </div>
-
-          <ArrowDown className="mt-14 animate-bounce text-slate-400" />
 
         </motion.div>
 
