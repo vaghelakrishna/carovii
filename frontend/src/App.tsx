@@ -2,7 +2,7 @@ import Hero from "./components/hero/Hero";
 import UploadPanel from "./components/workspace/UploadPanel";
 import SettingsPanel from "./components/workspace/SettingsPanel";
 import PreviewPanel from "./components/workspace/PreviewPanel";
-import WhatsNewCarousel from "./components/workspace/WhatsNewCarousel"
+// import WhatsNewCarousel from "./components/workspace/WhatsNewCarousel"
 import FreeTemplates from "./templates/FreeTemplates";
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
 
       </main>
       <FreeTemplates />
-      <WhatsNewCarousel />
+      {/* <WhatsNewCarousel /> */}
     </div>
   );
 }
