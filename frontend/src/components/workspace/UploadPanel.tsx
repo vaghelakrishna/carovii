@@ -108,12 +108,12 @@ const UploadPanel = () => {
   };
 
   return (
-    <Card className="overflow-hidden p-6">
+    <Card className="overflow-hidden rounded-2xl p-5 shadow-sm">
       <SectionTitle number={1} title="Upload" />
 
       <div
         {...getRootProps()}
-        className={`mt-6 rounded-[28px] border transition-all duration-300 ${isDragActive
+        className={`mt-4 rounded-2xl border transition-all duration-300 ${isDragActive
             ? "border-violet-400 bg-violet-50"
             : "border-[#ECEAF3] bg-[#FCFBFF]"
           }`}
@@ -124,43 +124,49 @@ const UploadPanel = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="relative overflow-hidden p-8"
+            className="relative overflow-hidden p-5"
           >
-            {/* Decorative blobs */}
-            <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-pink-100 blur-2xl" />
-            <div className="absolute -right-10 bottom-0 h-28 w-28 rounded-full bg-violet-100 blur-2xl" />
+            {/* Glow */}
+            <div className="absolute -left-8 -top-8 h-20 w-20 rounded-full bg-pink-100 blur-2xl" />
+            <div className="absolute -right-8 bottom-0 h-24 w-24 rounded-full bg-violet-100 blur-2xl" />
 
-            {/* Cute Illustration */}
+            {/* Upload Icon */}
             <motion.div
               animate={{
-                y: [0, -5, 0],
+                y: [0, -4, 0],
               }}
               transition={{
                 repeat: Infinity,
                 duration: 3,
               }}
-              className="mx-auto flex h-36 w-36 items-center justify-center rounded-[32px] bg-white shadow-lg"
+              className="mx-auto flex h-24 w-24 items-center justify-center rounded-3xl bg-white shadow-md"
             >
               <div className="relative">
-                <div className="absolute -left-3 -top-3 text-xl">✨</div>
-                <div className="absolute -right-3 bottom-0 text-lg">⭐</div>
+                <span className="absolute -left-2 -top-2 text-sm">
+                  ✨
+                </span>
 
-                <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-xl">
-                  <UploadCloud size={36} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white">
+                  <UploadCloud size={24} />
                 </div>
+
+                <span className="absolute -bottom-2 -right-2 text-xs">
+                  ⭐
+                </span>
               </div>
             </motion.div>
 
             {/* Text */}
-            <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold text-slate-900">
-                Drop your image or video
+
+            <div className="mt-5 text-center">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Upload your file
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-500">
-                Drag & drop your file here or choose it
+              <p className="mt-2 text-sm leading-5 text-slate-500">
+                Drag & drop an image or video
                 <br />
-                from your computer.
+                or browse from your computer
               </p>
 
               <button
@@ -169,87 +175,96 @@ const UploadPanel = () => {
                   e.stopPropagation();
                   open();
                 }}
-                className="mt-7 rounded-2xl bg-violet-600 px-7 py-3 font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-violet-700"
+                className="mt-5 rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700"
               >
-                Choose File
+                Browse Files
               </button>
 
-              <p className="mt-6 text-xs text-slate-400">
-                Supports PNG, JPG, WEBP, MP4 & MOV
-              </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
+                {["PNG", "JPG", "WEBP", "MP4", "MOV"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full bg-white px-3 py-1 text-[11px] font-medium text-slate-500 shadow-sm"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ) : (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="p-5"
+            className="p-4"
           >
             {/* Preview */}
-            <div className="overflow-hidden rounded-3xl border border-[#ECEAF3] bg-white shadow-sm">
+
+            <div className="overflow-hidden rounded-2xl border border-[#ECEAF3] bg-white shadow-sm">
               {fileType === "image" ? (
                 <img
                   src={preview}
                   alt="Preview"
-                  className="h-80 w-full bg-[#F8F8FC] object-contain"
+                  className="h-52 w-full bg-[#F8F8FC] object-contain"
                 />
               ) : (
                 <video
                   src={preview}
                   controls
-                  className="h-80 w-full bg-black object-contain"
+                  className="h-52 w-full bg-black object-contain"
                 />
               )}
             </div>
 
             {/* File Info */}
-            <div className="mt-5 flex items-center justify-between rounded-2xl border border-[#ECEAF3] bg-white p-4">
+
+            <div className="mt-4 flex items-center justify-between rounded-xl border border-[#ECEAF3] bg-white p-3">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-100">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100">
                   {fileType === "image" ? (
                     <ImageIcon
-                      size={22}
+                      size={18}
                       className="text-violet-600"
                     />
                   ) : (
                     <Video
-                      size={22}
+                      size={18}
                       className="text-violet-600"
                     />
                   )}
                 </div>
 
                 <div>
-                  <h4 className="max-w-[180px] truncate text-sm font-semibold text-slate-900">
+                  <h4 className="max-w-[150px] truncate text-[13px] font-semibold text-slate-900">
                     {file?.name}
                   </h4>
 
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="text-[11px] text-slate-500">
                     {file && formatSize(file.size)}
                   </p>
                 </div>
               </div>
 
-              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
+              <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700">
                 Ready
               </span>
             </div>
 
-            {/* Replace Button */}
+            {/* Buttons */}
+
             <button
               type="button"
               onClick={replaceFile}
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-violet-600 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-violet-700"
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700"
             >
-              <RefreshCw size={18} />
+              <RefreshCw size={16} />
               Replace File
             </button>
 
-            {/* Optional Remove */}
             <button
               type="button"
               onClick={removeFile}
-              className="mt-3 w-full text-sm font-medium text-slate-500 transition hover:text-red-500"
+              className="mt-2 w-full text-sm font-medium text-slate-500 transition hover:text-red-500"
             >
               Remove file
             </button>
