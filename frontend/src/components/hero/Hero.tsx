@@ -1,4 +1,4 @@
-import { ArrowDown, Sparkles } from "lucide-react";
+// import { ArrowDown, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import Container from "../layout/Container";
 
