@@ -12,7 +12,7 @@ import Card from "../ui/Card";
 import SectionTitle from "../ui/SectionTitle";
 
 import { useWorkspaceStore } from "../../store/workspaceStore";
-import { splitImage } from "../../utils/canvas";
+// import { splitImage } from "../../utils/canvas";
 
 const UploadPanel = () => {
   const {
