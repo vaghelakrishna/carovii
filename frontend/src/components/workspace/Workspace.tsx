@@ -1,36 +1,31 @@
-import UploadPanel from "./UploadPanel";
-import SettingsPanel from "./SettingsPanel";
-import PreviewPanel from "./PreviewPanel";
-import ExportPanel from "./ExportPanel";
+import UploadCard from "./UploadCard";
+import SettingsCard from "./SettingsCard";
+import PreviewCard from "./PreviewCard";
+import ExportCard from "./ExportCard";
 import Container from "../layout/Container";
 
 const Workspace = () => {
   return (
     <section className="pb-24">
-
       <Container>
 
-        <div className="rounded-[32px] border border-slate-200 bg-white shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+        <div className="rounded-[34px] border border-slate-200 bg-white p-8 shadow-[0_30px_100px_rgba(15,23,42,.08)]">
 
-          <div className="grid gap-8 p-8 lg:grid-cols-12">
+          <div className="grid gap-8 lg:grid-cols-12">
 
-            <div className="lg:col-span-4">
+            <div className="space-y-6 lg:col-span-4">
 
-              <UploadPanel />
+              <UploadCard />
 
-              <div className="h-6" />
-
-              <SettingsPanel />
+              <SettingsCard />
 
             </div>
 
-            <div className="lg:col-span-8">
+            <div className="space-y-6 lg:col-span-8">
 
-              <PreviewPanel />
+              <PreviewCard />
 
-              <div className="h-6" />
-
-              <ExportPanel />
+              <ExportCard />
 
             </div>
 
@@ -39,7 +34,6 @@ const Workspace = () => {
         </div>
 
       </Container>
-
     </section>
   );
 };
