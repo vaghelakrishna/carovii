@@ -1,0 +1,260 @@
+<svg
+  width="420"
+  height="420"
+  viewBox="0 0 420 420"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Gradient -->
+    <linearGradient id="cardGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+
+    <!-- Purple -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow
+        dx="0"
+        dy="18"
+        stdDeviation="18"
+        flood-opacity=".12"
+      />
+    </filter>
+
+    <!-- Floating -->
+    <style>
+      .float{
+      animation:float 4s ease-in-out infinite;
+      transform-origin:center;
+      }
+
+      .shadow{
+      animation:shadow 4s ease-in-out infinite;
+      transform-origin:center;
+      }
+
+      .sparkle{
+      animation:sparkle 2.5s ease-in-out infinite;
+      }
+
+      .sparkle2{
+      animation:sparkle 3.2s ease-in-out infinite;
+      animation-delay:1s;
+      }
+
+      .question{
+      animation:question 2.8s ease-in-out infinite;
+      transform-origin:center;
+      }
+
+      .eyes{
+      animation:blink 5s infinite;
+      transform-origin:center;
+      }
+
+      @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+      }
+
+      @keyframes shadow{
+      0%,100%{
+      transform:scale(1);
+      opacity:.18;
+      }
+      50%{
+      transform:scale(.92);
+      opacity:.1;
+      }
+      }
+
+      @keyframes sparkle{
+      0%,100%{
+      opacity:.2;
+      transform:scale(.8) rotate(0deg);
+      }
+
+      50%{
+      opacity:1;
+      transform:scale(1.2) rotate(15deg);
+      }
+      }
+
+      @keyframes question{
+      0%,100%{
+      transform:translateY(0) scale(1);
+      }
+
+      50%{
+      transform:translateY(-6px) scale(1.08);
+      }
+      }
+
+      @keyframes blink{
+      0%,47%,53%,100%{
+      transform:scaleY(1);
+      }
+
+      50%{
+      transform:scaleY(.08);
+      }
+      }
+    </style>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse
+    class="shadow"
+    cx="210"
+    cy="345"
+    rx="78"
+    ry="16"
+    fill="#0F172A"
+    opacity=".12"
+  />
+
+  <!-- Floating Group -->
+  <g class="float">
+
+    <!-- Card -->
+    <rect
+      x="110"
+      y="70"
+      width="200"
+      height="240"
+      rx="32"
+      fill="url(#cardGradient)"
+      stroke="#E5E7EB"
+      stroke-width="2"
+      filter="url(#shadow)"
+    />
+
+    <!-- Fold -->
+    <path
+      d="M270 70
+         L310 110
+         L270 110Z"
+      fill="#EEF2FF"
+    />
+
+    <!-- Picture -->
+    <rect
+      x="145"
+      y="120"
+      width="130"
+      height="85"
+      rx="18"
+      fill="#EEF2FF"
+    />
+
+    <circle
+      cx="175"
+      cy="145"
+      r="12"
+      fill="#A855F7"
+      opacity=".3"
+    />
+
+    <path
+      d="M150 190
+         L185 155
+         L215 182
+         L245 160
+         L270 190"
+      stroke="#7C3AED"
+      stroke-width="6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Eyes -->
+    <g class="eyes">
+      <ellipse cx="180" cy="240" rx="6" ry="8" fill="#1E293B"/>
+      <ellipse cx="240" cy="240" rx="6" ry="8" fill="#1E293B"/>
+    </g>
+
+    <!-- Mouth -->
+    <path
+      d="M185 275
+         Q210 258 235 275"
+      stroke="#64748B"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+
+    <!-- Question -->
+    <g class="question">
+      <circle
+        cx="310"
+        cy="95"
+        r="24"
+        fill="url(#accent)"
+      />
+
+      <text
+        x="310"
+        y="103"
+        text-anchor="middle"
+        font-size="22"
+        font-family="Inter, Arial"
+        font-weight="700"
+        fill="white"
+      >?</text>
+    </g>
+
+    <!-- Sparkles -->
+    <g class="sparkle">
+      <path
+        d="M95 120
+           L102 136
+           L118 143
+           L102 150
+           L95 166
+           L88 150
+           L72 143
+           L88 136Z"
+        fill="#7C3AED"
+      />
+    </g>
+
+    <g class="sparkle2">
+      <path
+        d="M320 260
+           L326 272
+           L338 278
+           L326 284
+           L320 296
+           L314 284
+           L302 278
+           L314 272Z"
+        fill="#06B6D4"
+      />
+    </g>
+
+    <g class="sparkle">
+      <circle
+        cx="330"
+        cy="180"
+        r="4"
+        fill="#A855F7"
+    />
+    </g>
+
+    <g class="sparkle2">
+      <circle
+        cx="95"
+        cy="250"
+        r="5"
+        fill="#06B6D4"
+      />
+    </g>
+
+  </g>
+</svg>
