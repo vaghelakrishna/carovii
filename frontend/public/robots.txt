@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://carovii.com/sitemap.xml
+Sitemap: https://carovii.vercel.app/sitemap.xml
