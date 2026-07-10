@@ -3,7 +3,7 @@ import { Minus, Plus, RectangleVertical, Square } from "lucide-react";
 import { useEffect } from "react";
 import { splitImage } from "../../utils/canvas";
 import Card from "../ui/Card";
-import SectionTitle from "../ui/SectionTitle";
+// import SectionTitle from "../ui/SectionTitle";
 import { useWorkspaceStore } from "../../store/workspaceStore";
 
 const SettingsPanel = () => {
@@ -55,7 +55,7 @@ const SettingsPanel = () => {
 
   return (
   <Card className="rounded-2xl p-5 shadow-sm">
-  <SectionTitle number={2} title="Carousel Settings" />
+  {/* <SectionTitle number={2} title="Carousel Settings" /> */}
 
   {/* Slides */}
 
