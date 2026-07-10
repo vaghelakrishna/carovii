@@ -62,7 +62,7 @@ const SettingsPanel = () => {
   <div className="mt-5">
 
     <div className="mb-3 flex items-center justify-between">
-      <h3 className="text-sm font-medium text-slate-800">
+      <h3 className="text-xl font-medium text-slate-800">
         Number of Slides
       </h3>
 
@@ -71,7 +71,7 @@ const SettingsPanel = () => {
       </span>
     </div>
 
-    <div className="flex items-center justify-between rounded-2xl border border-[#ECEAF3] bg-[#FCFBFF] px-4 py-3">
+    <div className="flex items-center justify-between rounded-2xl border border-[#ECEAF3] bg-[#FCFBFF] px-4 py-2">
 
       <motion.button
         whileTap={{ scale: 0.92 }}
