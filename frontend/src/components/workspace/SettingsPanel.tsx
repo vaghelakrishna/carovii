@@ -54,7 +54,7 @@ const SettingsPanel = () => {
   ]);
 
   return (
-  <Card className="rounded-2xl p-5 shadow-sm">
+    <div className="rounded-2xl p-5 shadow-sm h-[380px]">
   {/* <SectionTitle number={2} title="Carousel Settings" /> */}
 
   {/* Slides */}
@@ -66,9 +66,9 @@ const SettingsPanel = () => {
         Number of Slides
       </h3>
 
-      <span className="rounded-full bg-violet-100 px-2.5 py-1 text-[11px] font-medium text-violet-700">
+      {/* <span className="rounded-full bg-violet-100 px-2.5 py-1 text-[11px] font-medium text-violet-700">
         2 – 10
-      </span>
+      </span> */}
     </div>
 
     <div className="flex items-center justify-between rounded-2xl border border-[#ECEAF3] bg-[#FCFBFF] px-4 py-2">
@@ -116,7 +116,7 @@ const SettingsPanel = () => {
 
       <button
         onClick={() => setFormat("portrait")}
-        className={`rounded-xl border p-3 transition ${
+        className={`rounded-xl border p-2 transition ${
           format === "portrait"
             ? "border-violet-500 bg-violet-50"
             : "border-[#ECEAF3] bg-white hover:bg-slate-50"
@@ -139,7 +139,7 @@ const SettingsPanel = () => {
 
       <button
         onClick={() => setFormat("square")}
-        className={`rounded-xl border p-3 transition ${
+        className={`rounded-xl border p-2 transition ${
           format === "square"
             ? "border-violet-500 bg-violet-50"
             : "border-[#ECEAF3] bg-white hover:bg-slate-50"
@@ -166,7 +166,7 @@ const SettingsPanel = () => {
 
   {/* Status */}
 
-  <div className="mt-6 rounded-xl border border-[#ECEAF3] bg-[#FCFBFF] px-4 py-3">
+  {/* <div className="mt-6 rounded-xl border border-[#ECEAF3] bg-[#FCFBFF] px-4 py-3">
 
     {processing ? (
       <div className="flex items-center gap-2 text-sm text-violet-700">
@@ -180,8 +180,8 @@ const SettingsPanel = () => {
       </div>
     )}
 
-  </div>
-</Card>
+  </div> */}
+</div>
   );
 };
 
