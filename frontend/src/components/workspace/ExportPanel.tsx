@@ -17,7 +17,7 @@ const ExportPanel = () => {
 
   return (
     <Card className="p-6">
-      <SectionTitle number={4} title="Export" />
+      {/* <SectionTitle number={4} title="Export" /> */}
 
       <div className="mt-6 rounded-[28px] border border-[#ECEAF3] bg-[#FCFBFF] p-6">
 
