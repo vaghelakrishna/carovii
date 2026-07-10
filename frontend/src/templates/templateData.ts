@@ -38,15 +38,19 @@ export const templates = [
     likes: "2,103",
     url: "https://instagram.com/",
   },
-  // {
-  //   id: 4,
-  //   username: "krishnacreates.design",
-  //   profile: "./src/assets/images/cutie.png",
-  //   image: "/templates/template4.webp",
-  //   caption: "Business Carousel 🚀",
-  //   likes: "852",
-  //   url: "https://instagram.com/",
-  // },
+  {
+    id: 4,
+    username: "krishnacreates.design",
+    profile: "./src/assets/images/cutie.png",
+    images: [
+      "/templates/1.jpg",
+      "/templates/2.jpg",
+      "/templates/3.jpg",
+    ],
+    caption: "Travel Story Template 🌎",
+    likes: "2,103",
+    url: "https://instagram.com/",
+  },
 
 
 ];
