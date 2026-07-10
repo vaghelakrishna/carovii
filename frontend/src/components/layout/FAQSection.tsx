@@ -77,9 +77,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
 
-          <div className="mx-auto mt-3 h-2 w-48 rounded-full bg-violet-200">
-            <div className="h-full w-24 rounded-full bg-violet-600 animate-pulse" />
-          </div>
+
 
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-500">
             Everything you need to know before creating your first Instagram
