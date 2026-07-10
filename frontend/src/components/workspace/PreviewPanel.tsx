@@ -18,7 +18,7 @@ const PreviewPanel = () => {
 
   return (
     <Card className="flex h-[500px] flex-col rounded-2xl p-5 shadow-sm">
-      <SectionTitle number={3} title="Carousel Preview" />
+      {/* <SectionTitle number={3} title="Carousel Preview" /> */}
 
       {!preview ? (
         <div className="mt-5 flex flex-1 flex-col items-center justify-center rounded-2xl border border-[#ECEAF3] bg-[#FCFBFF]">
