@@ -1,9 +1,10 @@
-import { Download, ImageIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download, ImageIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Card from "../ui/Card";
+// import Card from "../ui/Card";
 // import SectionTitle from "../ui/SectionTitle";
 import { useWorkspaceStore } from "../../store/workspaceStore";
+import { useRef } from "react";
 
 const PreviewPanel = () => {
   const { slices, preview } = useWorkspaceStore();
@@ -16,8 +17,23 @@ const PreviewPanel = () => {
     link.click();
   };
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -220,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
+      left: 220,
+      behavior: "smooth",
+    });
+  };
   return (
-    <Card className="flex h-[400px] flex-col rounded-2xl p-5 shadow-sm">
+    <div className="flex h-[490px] ">
       {/* <SectionTitle number={3} title="Carousel Preview" /> */}
 
       {!preview ? (
@@ -42,91 +58,157 @@ const PreviewPanel = () => {
         </div>
       ) : (
         <>
-          {/* Preview */}
+            {/* Preview */}
 
-          <div className="mt-5 flex-1 overflow-hidden">
+            <div className="relative rounded-[28px] border border-[#ECEAF3] bg-[#FCFBFF] p-8">
 
-            <div className="flex h-full gap-4 overflow-x-auto overflow-y-hidden pb-4 scroll-smooth">
+              <h2 className="text-center text-2xl font-bold text-slate-900">
+                Your carousel is ready
+              </h2>
 
-              {slices.map((slice, index) => (
-                <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 15,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  whileHover={{
-                    y: -4,
-                  }}
-                  transition={{
-                    duration: .25,
-                  }}
-                  className="group relative h-[250px] w-[180px] flex-shrink-0 overflow-hidden rounded-2xl border border-[#ECEAF3] bg-white shadow-sm"
+              <p className="mt-2 text-center text-sm text-slate-500">
+                Download individual slides or export everything as ZIP.
+              </p>
+
+              {/* Left Button */}
+
+              {slices.length > 3 && (
+                <button
+                  onClick={scrollLeft}
+                  className="
+      absolute
+      left-4
+      top-1/2
+      z-20
+      -translate-y-1/2
+      flex
+      h-11
+      w-11
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-[#ECEAF3]
+      bg-white
+      shadow-lg
+      transition
+      hover:scale-105
+    "
                 >
-                  <img
-                    src={slice}
-                    alt={`Slide ${index + 1}`}
-                    className="h-full w-full object-cover"
-                  />
+                  <ChevronLeft size={20} />
+                </button>
+              )}
 
-                  {/* Hover */}
+              {/* Right Button */}
 
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/20">
+              {slices.length > 3 && (
+                <button
+                  onClick={scrollRight}
+                  className="
+      absolute
+      right-4
+      top-1/2
+      z-20
+      -translate-y-1/2
+      flex
+      h-11
+      w-11
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-[#ECEAF3]
+      bg-white
+      shadow-lg
+      transition
+      hover:scale-105
+    "
+                >
+                  <ChevronRight size={20} />
+                </button>
+              )}
+
+              {/* Slides */}
+
+              <div
+                ref={scrollRef}
+                className="
+      mt-10
+      flex
+      gap-2
+      scroll-smooth
+      pb-4
+      px-2
+      scrollbar-hide
+      overflow-x-hidden
+    "
+              >
+                {slices.map((slice, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -5 }}
+                    className="flex-shrink-0"
+                  >
+                    <div className="overflow-hidden rounded-2xl border border-[#ECEAF3] bg-white shadow-sm">
+
+                      <img
+                        src={slice}
+                        className="h-44 w-32 object-cover"
+                      />
+
+                    </div>
 
                     <button
-                      onClick={() =>
-                        downloadImage(slice, index)
-                      }
-                      className="translate-y-4 rounded-xl bg-white p-2.5 opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      onClick={() => downloadImage(slice, index)}
+                      className="
+            mx-auto
+            mt-4
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-[#ECEAF3]
+            bg-white
+            shadow-sm
+            transition
+            hover:border-violet-300
+            hover:bg-violet-50
+          "
                     >
-                      <Download
-                        size={16}
-                        className="text-slate-700"
-                      />
+                      <Download size={16} />
                     </button>
+                  </motion.div>
+                ))}
+              </div>
 
-                  </div>
+              {/* Download All */}
 
-                  {/* Number */}
-
-                  <div className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
-                    {index + 1}
-                  </div>
-
-                </motion.div>
-              ))}
+              <button
+                className="
+      mx-auto
+      mt-8
+      flex
+      rounded-xl
+      bg-violet-600
+      px-8
+      py-3.5
+      font-semibold
+      text-white
+      shadow-lg
+      transition
+      hover:bg-violet-700
+    "
+              >
+                Download All as ZIP
+              </button>
 
             </div>
-
-          </div>
-
-          {/* Bottom */}
-
-          <button
-            className="
-        mt-5
-        rounded-xl
-        bg-gradient-to-r
-        from-violet-600
-        to-fuchsia-600
-        py-3
-        text-sm
-        font-semibold
-        text-white
-        shadow-md
-        transition
-        hover:-translate-y-0.5
-        "
-          >
-            Download ZIP
-          </button>
         </>
       )}
-    </Card>
+    </div>
   );
 };
 
