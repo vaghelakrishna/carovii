@@ -109,14 +109,11 @@ const UploadPanel = () => {
 
   return (
     <Card className="overflow-hidden rounded-2xl p-5 shadow-sm">
-      <SectionTitle number={1} title="Upload" />
+
 
       <div
         {...getRootProps()}
-        className={`mt-4 rounded-2xl border transition-all duration-300 ${isDragActive
-            ? "border-violet-400 bg-violet-50"
-            : "border-[#ECEAF3] bg-[#FCFBFF]"
-          }`}
+        className={`mt-4 rounded-2xl transition-all duration-300 `}
       >
         <input {...getInputProps()} />
 
@@ -124,75 +121,95 @@ const UploadPanel = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="relative overflow-hidden p-5"
+            className="
+      relative
+      overflow-hidden
+      rounded-[28px]
+      border-2
+      border-dashed
+      border-[#E7E3F4]
+      bg-white
+      px-4
+      py-4
+      text-center
+      transition-all
+      duration-300
+    "
           >
-            {/* Glow */}
-            <div className="absolute -left-8 -top-8 h-20 w-20 rounded-full bg-pink-100 blur-2xl" />
-            <div className="absolute -right-8 bottom-0 h-24 w-24 rounded-full bg-violet-100 blur-2xl" />
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#FCFBFF] to-white" />
 
-            {/* Upload Icon */}
-            <motion.div
-              animate={{
-                y: [0, -4, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3,
-              }}
-              className="mx-auto flex h-24 w-24 items-center justify-center rounded-3xl bg-white shadow-md"
-            >
-              <div className="relative">
-                <span className="absolute -left-2 -top-2 text-sm">
-                  ✨
-                </span>
-
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white">
-                  <UploadCloud size={24} />
-                </div>
-
-                <span className="absolute -bottom-2 -right-2 text-xs">
-                  ⭐
-                </span>
-              </div>
-            </motion.div>
-
-            {/* Text */}
-
-            <div className="mt-5 text-center">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Upload your file
+            <div className="relative z-10">
+              {/* Heading */}
+              <h3 className="text-[28px] font-bold tracking-tight text-slate-900">
+                Create New Carousel
               </h3>
+              {/* SVG */}
+              <div className="mx-auto mb-4 flex h-35 w-35 items-center justify-center">
+                <img
+                  src="./src/assets/icons/photoandcamera.png"
+                  alt="Upload"
+                  className="h-full w-full object-contain"
+                />
+              </div>
 
-              <p className="mt-2 text-sm leading-5 text-slate-500">
-                Drag & drop an image or video
-                <br />
-                or browse from your computer
+
+              <p className="mt-3 text-[15px] leading-7 text-slate-500">
+                Drag photos and videos here
               </p>
 
+
+
+              {/* Button */}
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   open();
                 }}
-                className="mt-5 rounded-xl bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700"
+                className="
+          mt-4
+          rounded-xl
+          bg-[#6D4AFF]
+          px-8
+          py-3.5
+          text-sm
+          font-semibold
+          text-white
+          shadow-lg
+          transition-all
+          hover:scale-[1.03]
+          hover:bg-[#5E3CF6]
+        "
               >
-                Browse Files
+                Select from computer
               </button>
 
-              <div className="mt-5 flex flex-wrap justify-center gap-2">
+              {/* Formats */}
+              {/* <div className="mt-7 flex flex-wrap justify-center gap-2">
                 {["PNG", "JPG", "WEBP", "MP4", "MOV"].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full bg-white px-3 py-1 text-[11px] font-medium text-slate-500 shadow-sm"
+                    className="
+              rounded-full
+              border
+              border-[#ECEAF3]
+              bg-[#FAFAFD]
+              px-3
+              py-1
+              text-xs
+              font-medium
+              text-slate-500
+            "
                   >
                     {item}
                   </span>
                 ))}
-              </div>
+              </div> */}
             </div>
           </motion.div>
         ) : (
+          
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -276,4 +293,4 @@ const UploadPanel = () => {
 
 };
 
-export default UploadPanel;
+export default UploadPanel; 
