@@ -2,7 +2,7 @@ import { Download, ImageIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 import Card from "../ui/Card";
-import SectionTitle from "../ui/SectionTitle";
+// import SectionTitle from "../ui/SectionTitle";
 import { useWorkspaceStore } from "../../store/workspaceStore";
 
 const PreviewPanel = () => {
