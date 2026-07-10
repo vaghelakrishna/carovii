@@ -5,6 +5,7 @@ import PreviewPanel from "./components/workspace/PreviewPanel";
 // import WhatsNewCarousel from "./components/workspace/WhatsNewCarousel"
 import FreeTemplates from "./templates/FreeTemplates";
 import Footer from "./components/layout/Footer";
+import FAQSection from "./components/layout/FAQSection";
 function App() {
   return (
     <div className="min-h-screen bg-[#FAF9FF] overflow-x-hidden">
@@ -54,6 +55,7 @@ function App() {
       </main>
       <FreeTemplates />
       {/* <WhatsNewCarousel /> */}
+      <FAQSection />
       <Footer />
     </div>
   );
