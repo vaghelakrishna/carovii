@@ -10,7 +10,7 @@ import {
 
 import Card from "../ui/Card";
 // import SectionTitle from "../ui/SectionTitle";
-
+import uploadImage from "../../assets/icons/photoandcamera.png";
 import { useWorkspaceStore } from "../../store/workspaceStore";
 // import { splitImage } from "../../utils/canvas";
 
@@ -150,7 +150,7 @@ const UploadPanel = () => {
               {/* SVG */}
               <div className="mx-auto mb-4 flex h-35 w-35 items-center justify-center">
                 <img
-                  src="./src/assets/icons/photoandcamera.png"
+                  src={uploadImage}
                   alt="Upload"
                   className="h-full w-full object-contain"
                 />
