@@ -28,6 +28,9 @@ const UploadPanel = () => {
     reset,
   } = useWorkspaceStore();
 
+
+
+
   const onDrop = useCallback(
     async (acceptedFiles: File[]) => {
       const uploaded = acceptedFiles[0];
