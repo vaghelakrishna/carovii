@@ -33,7 +33,7 @@ const PreviewPanel = () => {
     });
   };
   return (
-    <div className="flex h-[490px] ">
+    <div className="flex h-[490px] w-[450px] min-w-0">
       {/* <SectionTitle number={3} title="Carousel Preview" /> */}
 
       {!preview ? (
@@ -60,8 +60,7 @@ const PreviewPanel = () => {
         <>
             {/* Preview */}
 
-            <div className="relative rounded-[28px] border border-[#ECEAF3] bg-[#FCFBFF] p-8">
-
+            <div className="relative w-full min-w-0 overflow-hidden rounded-[28px] border border-[#ECEAF3] bg-[#FCFBFF] p-8">
               <h2 className="text-center text-2xl font-bold text-slate-900">
                 Your carousel is ready
               </h2>
@@ -130,58 +129,43 @@ const PreviewPanel = () => {
 
               {/* Slides */}
 
-              <div
-                ref={scrollRef}
-                className="
-      mt-10
+              {/* Slides Wrapper */}
+              <div className="relative mt-10 w-full overflow-hidden">
+                <div
+                  ref={scrollRef}
+                  className="
       flex
       gap-2
-      scroll-smooth
-      pb-4
-      px-2
+      overflow-x-auto
       scrollbar-hide
+      scroll-smooth
       overflow-x-hidden
+      w-full
     "
-              >
-                {slices.map((slice, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ y: -5 }}
-                    className="flex-shrink-0"
-                  >
-                    <div className="overflow-hidden rounded-2xl border border-[#ECEAF3] bg-white shadow-sm">
-
-                      <img
-                        src={slice}
-                        className="h-44 w-32 object-cover"
-                      />
-
-                    </div>
-
-                    <button
-                      onClick={() => downloadImage(slice, index)}
-                      className="
-            mx-auto
-            mt-4
-            flex
-            h-10
-            w-10
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-[#ECEAF3]
-            bg-white
-            shadow-sm
-            transition
-            hover:border-violet-300
-            hover:bg-violet-50
-          "
+                >
+                  {slices.map((slice, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ y: -5 }}
+                      className="shrink-0 basis-32"
                     >
-                      <Download size={16} />
-                    </button>
-                  </motion.div>
-                ))}
+                      <div className="relative h-44 overflow-hidden rounded-2xl border border-[#ECEAF3] bg-white">
+                        <img
+                          src={slice}
+                          alt=""
+                          className="absolute inset-y-0 left-0 h-full w-auto"
+                        />
+                      </div>
+
+                      <button
+                        onClick={() => downloadImage(slice, index)}
+                        className="mx-auto mt-4 flex h-10 w-10 items-center justify-center rounded-full border border-[#ECEAF3] bg-white shadow-sm"
+                      >
+                        <Download size={16} />
+                      </button>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
               {/* Download All */}
