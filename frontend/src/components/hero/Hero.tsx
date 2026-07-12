@@ -3,11 +3,56 @@ import Container from "../layout/Container";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24">
+    <section className="relative overflow-hidden py-16 md:py-24 h-screen">
     {/* <section className="relative overflow-hidden py-16 md:py-24" style={{
       backgroundImage: "url('./src/assets/images/bg.png')"
     }}> */}
       <Container>
+
+        {/* Brand */}
+
+        <div className="mb-12 flex items-center justify-center">
+
+          <div
+            className="
+      inline-flex
+      items-center
+      gap-3
+      rounded-full
+      border
+      border-[#ECEAF3]
+      bg-white/80
+      px-5
+      py-2.5
+      shadow-sm
+      backdrop-blur
+    "
+          >
+            <span
+              className="
+        font-['Fraunces']
+        text-2xl
+        font-black
+        tracking-tight
+        text-[#5B21B6]
+      "
+            >
+              Carovii
+            </span>
+
+            <div className="h-4 w-px bg-[#E5E7EB]" />
+
+            <span className="text-sm text-slate-500">
+              by
+            </span>
+
+            <span className="text-sm font-semibold text-slate-800">
+              krishnacreates.design
+            </span>
+
+          </div>
+
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,11 +63,11 @@ const Hero = () => {
 
           {/* Badge */}
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#E9E2FF] bg-white/90 px-5 py-2 shadow-sm backdrop-blur">
+          {/* <div className="inline-flex items-center gap-2 rounded-full border border-[#E9E2FF] bg-white/90 px-5 py-2 shadow-sm backdrop-blur">
             <span className="text-sm font-medium text-slate-700">
               Free • No Watermark • Browser Based
             </span>
-          </div>
+          </div> */}
 
           {/* Heading */}
 
@@ -62,7 +107,7 @@ const Hero = () => {
 
           {/* Quote */}
 
-          <p
+          {/* <p
             className="
               mt-8
               font-['Cormorant_Garamond']
@@ -76,40 +121,23 @@ const Hero = () => {
             Don't crop your story.
             <br />
             Split it beautifully.
+          </p> */}
+
+          <p
+            className="
+    mt-12
+    max-w-2xl
+    text-center
+    text-lg
+    leading-8
+    text-slate-500
+  "
+          >
+            Drop your image, pick your slides, download & post.
+            <span className="font-medium text-slate-800">
+              {" "}No signup. No nonsense. Just clean cuts.
+            </span>
           </p>
-
-          {/* Features */}
-
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-
-            {[
-              "Instant Split",
-              "HD Export",
-              "Unlimited",
-              "Privacy First",
-              "No Upload Limit",
-            ].map((item) => (
-              <span
-                key={item}
-                className="
-                  rounded-full
-                  border
-                  border-[#ECEAF3]
-                  bg-white/90
-                  px-4
-                  py-2
-                  text-sm
-                  font-medium
-                  text-slate-600
-                  shadow-sm
-                  backdrop-blur
-                "
-              >
-                {item}
-              </span>
-            ))}
-
-          </div>
 
         </motion.div>
 
