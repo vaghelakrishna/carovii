@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Minus, Plus, RectangleVertical, Square } from "lucide-react";
 import { useEffect } from "react";
 import { splitImage } from "../../utils/canvas";
-import Card from "../ui/Card";
+// import Card from "../ui/Card";
 // import SectionTitle from "../ui/SectionTitle";
 import { useWorkspaceStore } from "../../store/workspaceStore";
 
@@ -14,7 +14,7 @@ const SettingsPanel = () => {
     setSlides,
     format,
     setFormat,
-    processing,
+    // processing,
     setSlices,
   } = useWorkspaceStore();
   const decreaseSlides = () => {
