@@ -2,14 +2,14 @@ import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { motion } from "framer-motion";
 import {
-  UploadCloud,
+  // UploadCloud,
   RefreshCw,
   Image as ImageIcon,
   Video,
 } from "lucide-react";
 
 import Card from "../ui/Card";
-import SectionTitle from "../ui/SectionTitle";
+// import SectionTitle from "../ui/SectionTitle";
 
 import { useWorkspaceStore } from "../../store/workspaceStore";
 // import { splitImage } from "../../utils/canvas";
