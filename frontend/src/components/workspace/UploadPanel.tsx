@@ -77,7 +77,7 @@ const UploadPanel = () => {
   const {
     getRootProps,
     getInputProps,
-    isDragActive,
+    // isDragActive,
     open,
   } = useDropzone({
     onDrop,
