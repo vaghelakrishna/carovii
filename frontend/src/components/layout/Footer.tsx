@@ -1,14 +1,13 @@
+import { ArrowUpRight, Heart, Mail } from "lucide-react";
 import {
-  ArrowUpRight,
-  Heart,
-  // Instagram,
-  // Github,
-  Mail,
-} from "lucide-react";
+  FaInstagram,
+  FaXTwitter,
+  FaGithub,
+} from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-[#ECEAF3] bg-[#FCFBFF]">
+    <footer className="relative mt-10 overflow-hidden border-t border-[#ECEAF3] bg-[#FCFBFF]">
 
 
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-6">
@@ -16,7 +15,7 @@ const Footer = () => {
 
         {/* Footer */}
 
-        <div className="mt-20 grid gap-14 lg:grid-cols-[1.7fr_1fr_1fr_1fr]">
+        <div className="mt-20 grid gap-14 lg:grid-cols-[2fr_1fr_1fr]">
 
           {/* Brand */}
 
@@ -33,23 +32,36 @@ const Footer = () => {
 
             <div className="mt-8 flex gap-3">
 
-              {/* <a
-                href="#"
-                className="rounded-xl bg-white p-3 shadow border border-[#ECEAF3] hover:border-violet-300"
+              <a
+                href="https://instagram.com/carovii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-[#ECEAF3] bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
               >
-                <Instagram size={18} />
+                <FaInstagram size={18} />
               </a>
 
               <a
-                href="#"
-                className="rounded-xl bg-white p-3 shadow border border-[#ECEAF3] hover:border-violet-300"
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-[#ECEAF3] bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
               >
-                <Github size={18} />
-              </a> */}
+                <FaXTwitter size={18} />
+              </a>
 
               <a
-                href="#"
-                className="rounded-xl bg-white p-3 shadow border border-[#ECEAF3] hover:border-violet-300"
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-[#ECEAF3] bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
+              >
+                <FaGithub size={18} />
+              </a>
+
+              <a
+                href="mailto:hello@carovii.com"
+                className="rounded-xl border border-[#ECEAF3] bg-white p-3 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
               >
                 <Mail size={18} />
               </a>
@@ -88,43 +100,7 @@ const Footer = () => {
 
           </div>
 
-          {/* Resources */}
 
-          <div>
-
-            <h4 className="font-bold text-slate-900">
-              Resources
-            </h4>
-
-            <ul className="mt-5 space-y-4 text-slate-500">
-
-              <li>
-                <a href="#">
-                  Instagram Guide
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  Creator Tips
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  Privacy
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  Terms
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
 
           {/* Contact */}
 
@@ -167,7 +143,7 @@ const Footer = () => {
 
         {/* Bottom */}
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-5 border-t border-[#ECEAF3] pt-8 text-sm text-slate-500 md:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-[#ECEAF3] pt-8 text-sm text-slate-500 md:flex-row">
 
           <p>
             © 2026 Carovii. All rights reserved.
