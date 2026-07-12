@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+// import { Heart } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -51,7 +51,7 @@ const Footer = () => {
         {/* Bottom */}
 
         <p className="mt-8 text-xs text-slate-400">
-          © 2026 Carovii · free forever · no watermark · made for creators ✨
+          © 2026 Carovii · free forever · no watermark · made for creators 💛
         </p>
 
       </div>
