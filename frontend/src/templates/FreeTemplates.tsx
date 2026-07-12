@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import TemplateCard from "./TemplateCard";
 import { templates } from "./templateData";
 import { useRef, useState } from "react";
-
+import arrow from "../assets/illustations/arrow.png";
 const FreeTemplates = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   
@@ -52,7 +52,7 @@ const FreeTemplates = () => {
             </h2>
 
             <img
-              src="./src/assets/illustations/arrow.png" // apna path yaha do
+              src={ arrow}// apna path yaha do
               alt=""
               className="
       ml-85
