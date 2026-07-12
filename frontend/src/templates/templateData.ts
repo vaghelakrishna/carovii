@@ -1,15 +1,30 @@
+import today_dump1 from "../assets/images/today_dump/1.png";
+import today_dump2 from "../assets/images/today_dump/2.png";
+import today_dump3 from "../assets/images/today_dump/3.png";
+import today_dump4 from "../assets/images/today_dump/4.png";
+import today_dump5 from "../assets/images/today_dump/5.png";
+import today_dump6 from "../assets/images/today_dump/6.png";
+
+import june_dump1 from "../assets/images/june_dump/slide-1.png";
+import june_dump2 from "../assets/images/june_dump/slide-2.png";
+import june_dump3 from "../assets/images/june_dump/slide-3.png";
+import june_dump4 from "../assets/images/june_dump/slide-4.png";
+
+
+import free1 from "../assets/images/june_dump/FREE1.png";
+import free2 from "../assets/images/june_dump/FREE2.png";
 export const templates = [
   {
     id: 1,
     username: "krishnacreates.design",
     profile: "./src/assets/images/cutie.png",
     images: [
-      "./src/assets/images/today_dump/1.png",
-      "./src/assets/images/today_dump/2.png",
-      "./src/assets/images/today_dump/3.png",
-      "./src/assets/images/today_dump/4.png",
-      "./src/assets/images/today_dump/5.png",
-      "./src/assets/images/today_dump/6.png",
+      today_dump1,
+      today_dump2,
+      today_dump3,
+      today_dump4,
+      today_dump5,
+      today_dump6,
     ],
     caption: "Daily Post/Story ideas ✨",
     likes: "1,284",
@@ -20,10 +35,10 @@ export const templates = [
     username: "krishnacreates.design",
     profile: "./src/assets/images/cutie.png",
   images: [
-    "./src/assets/images/june_dump/slide-1.png",
-    "./src/assets/images/june_dump/slide-2.png",
-    "./src/assets/images/june_dump/slide-3.png",
-    "./src/assets/images/june_dump/slide-4.png",
+    june_dump1,
+    june_dump2,
+    june_dump3,
+    june_dump4,
 
   ],
     caption: "June Month Carousel 🤍",
@@ -35,8 +50,8 @@ export const templates = [
     username: "krishnacreates.design",
     profile: "./src/assets/images/cutie.png",
     images: [
-      "./src/assets/images/june_dump/FREE1.png",
-      "./src/assets/images/june_dump/FREE2.png",
+      free1,
+      free2,
     ],
     caption: "Travel Story Template 🌎",
     likes: "2,103",
