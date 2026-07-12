@@ -1,0 +1,332 @@
+<svg
+    width="420"
+    height="420"
+    viewBox="0 0 420 420"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".18"/>
+</filter>
+
+<style>
+
+.cat{
+    animation:float 4s ease-in-out infinite;
+    transform-origin:center;
+}
+
+.shadow{
+    animation:shadow 4s ease-in-out infinite;
+    transform-origin:center;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes shadow{
+    0%,100%{
+        transform:scale(1);
+        opacity:.18;
+    }
+    50%{
+        transform:scale(.88);
+        opacity:.08;
+    }
+}
+
+</style>
+
+</defs>
+
+<!-- Ground Shadow -->
+
+<ellipse
+class="shadow"
+cx="220"
+cy="365"
+rx="82"
+ry="14"
+fill="#000"
+opacity=".15"/>
+
+<g class="cat">
+
+<!-- White Sticker -->
+
+<path
+d="
+M120 75
+
+Q120 45 145 45
+
+Q162 45 175 68
+
+Q184 45 205 45
+
+Q226 45 235 68
+
+Q247 45 265 45
+
+Q290 45 300 72
+
+L300 285
+
+Q300 322 270 332
+
+L338 340
+
+Q352 342 352 352
+
+Q352 362 339 364
+
+L150 364
+
+Q120 364 120 332
+
+Z"
+
+fill="white"
+filter="url(#shadow)"/>
+
+<!-- Cat Body -->
+
+<path
+d="
+M138 68
+
+Q138 48 158 48
+
+Q170 48 181 70
+
+Q192 48 212 48
+
+Q232 48 243 71
+
+Q254 48 272 48
+
+Q288 48 292 69
+
+L292 286
+
+Q292 320 264 326
+
+L330 334
+
+Q340 336 340 344
+
+Q340 352 329 354
+
+L158 354
+
+Q138 354 138 330
+
+Z"
+
+fill="#0D0D0D"/>
+
+<!-- Tail -->
+
+<path
+d="
+M255 320
+
+Q330 320 360 330
+
+Q382 338 382 345
+
+Q382 352 368 352
+
+L250 346
+"
+
+stroke="#0D0D0D"
+stroke-width="18"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+
+<!-- Bottom Curve -->
+
+<path
+d="
+M145 316
+
+Q165 336 185 320
+"
+
+stroke="#090909"
+stroke-width="12"
+stroke-linecap="round"/>
+
+<!-- Ear Shadow -->
+
+<path
+d="
+M181 70
+L172 86
+L191 82Z"
+
+fill="#1B1B1B"/>
+
+<path
+d="
+M242 70
+L233 86
+L252 82Z"
+
+fill="#1B1B1B"/>
+
+<!-- ========================= -->
+<!-- Eyes -->
+<!-- ========================= -->
+
+<style>
+
+.eye{
+    transform-origin:center;
+    animation:blink 5s infinite;
+}
+
+.flower{
+    transform-origin:184px 88px;
+    animation:flowerSpin 10s linear infinite;
+}
+
+.tail{
+    transform-origin:260px 338px;
+    animation:tailSwing 3s ease-in-out infinite;
+}
+
+@keyframes blink{
+
+0%,94%,100%{
+transform:scaleY(1);
+}
+
+96%{
+transform:scaleY(.08);
+}
+
+98%{
+transform:scaleY(1);
+}
+
+}
+
+@keyframes flowerSpin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes tailSwing{
+
+0%,100%{
+transform:rotate(0deg);
+}
+
+50%{
+transform:rotate(5deg);
+}
+
+}
+
+</style>
+
+<!-- Tail Animation -->
+
+<g class="tail">
+
+<path
+d="
+M255 320
+Q330 320 360 330
+Q382 338 382 345
+Q382 352 368 352
+L250 346"
+stroke="#0D0D0D"
+stroke-width="18"
+stroke-linecap="round"/>
+
+</g>
+
+<!-- Left Eye -->
+
+<g class="eye">
+
+<circle
+cx="172"
+cy="170"
+r="15"
+fill="none"
+stroke="#FFD54A"
+stroke-width="5"/>
+
+</g>
+
+<!-- Right Eye -->
+
+<g class="eye">
+
+<circle
+cx="228"
+cy="170"
+r="15"
+fill="none"
+stroke="#FFD54A"
+stroke-width="5"/>
+
+</g>
+
+<!-- ========================= -->
+<!-- Flower -->
+<!-- ========================= -->
+
+<g class="flower">
+
+<!-- Center -->
+
+<circle
+cx="184"
+cy="88"
+r="7"
+fill="#8A8A8A"/>
+
+<!-- Petals -->
+
+<ellipse cx="184" cy="69" rx="5" ry="9" fill="#F8F8F8"/>
+<ellipse cx="197" cy="74" rx="5" ry="9" transform="rotate(45 197 74)" fill="#D9D9D9"/>
+<ellipse cx="203" cy="88" rx="5" ry="9" transform="rotate(90 203 88)" fill="#F8F8F8"/>
+<ellipse cx="197" cy="102" rx="5" ry="9" transform="rotate(135 197 102)" fill="#D9D9D9"/>
+<ellipse cx="184" cy="107" rx="5" ry="9" fill="#F8F8F8"/>
+<ellipse cx="171" cy="102" rx="5" ry="9" transform="rotate(45 171 102)" fill="#D9D9D9"/>
+<ellipse cx="165" cy="88" rx="5" ry="9" transform="rotate(90 165 88)" fill="#F8F8F8"/>
+<ellipse cx="171" cy="74" rx="5" ry="9" transform="rotate(135 171 74)" fill="#D9D9D9"/>
+
+</g>
+
+<!-- Tiny Nose -->
+
+<circle
+cx="200"
+cy="215"
+r="2.5"
+fill="#151515"/>
+
+</g>
+
+</svg>
