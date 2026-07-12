@@ -45,31 +45,31 @@ export const templates = [
     likes: "942",
     url: "https://instagram.com/",
   },
-  {
-    id: 3,
-    username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
-    images: [
-      free1,
-      free2,
-    ],
-    caption: "Travel Story Template 🌎",
-    likes: "2,103",
-    url: "https://instagram.com/",
-  },
-  {
-    id: 4,
-    username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
-    images: [
-      "/templates/1.jpg",
-      "/templates/2.jpg",
-      "/templates/3.jpg",
-    ],
-    caption: "Travel Story Template 🌎",
-    likes: "2,103",
-    url: "https://instagram.com/",
-  },
+  // {
+  //   id: 3,
+  //   username: "krishnacreates.design",
+  //   profile: "./src/assets/images/cutie.png",
+  //   images: [
+  //     free1,
+  //     free2,
+  //   ],
+  //   caption: "Travel Story Template 🌎",
+  //   likes: "2,103",
+  //   url: "https://instagram.com/",
+  // },
+  // {
+  //   id: 4,
+  //   username: "krishnacreates.design",
+  //   profile: "./src/assets/images/cutie.png",
+  //   images: [
+  //     "/templates/1.jpg",
+  //     "/templates/2.jpg",
+  //     "/templates/3.jpg",
+  //   ],
+  //   caption: "Travel Story Template 🌎",
+  //   likes: "2,103",
+  //   url: "https://instagram.com/",
+  // },
 
 
 ];
