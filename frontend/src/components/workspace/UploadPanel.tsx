@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { motion } from "framer-motion";
+
 import {
   // UploadCloud,
   RefreshCw,
@@ -111,7 +112,7 @@ const UploadPanel = () => {
   };
 
   return (
-    <Card className="overflow-hidden rounded-2xl p-5 shadow-sm">
+    <Card className="overflow-hidden rounded-2xl p-5 shadow-sm mt-20">
 
 
       <div
