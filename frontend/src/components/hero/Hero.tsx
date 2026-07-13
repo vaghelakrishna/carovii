@@ -3,7 +3,7 @@ import Container from "../layout/Container";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 h-screen">
+    <section className="relative overflow-hidden py-16 md:py-24 ">
     {/* <section className="relative overflow-hidden py-16 md:py-24" style={{
       backgroundImage: "url('./src/assets/images/bg.png')"
     }}> */}
