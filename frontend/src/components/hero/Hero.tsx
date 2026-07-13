@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Container from "../layout/Container";
 import purplebg from "../../assets/images/purplebg.png";
+import catty from "../../assets/images/catty.webm";
 const Hero = () => {
   return (
     // <section className="relative overflow-hidden py-16 md:py-24 ">
@@ -152,6 +153,26 @@ const Hero = () => {
 
         </motion.div>
 
+        {/* Cat */}
+        <video
+          src={catty}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="
+          absolute
+          -bottom-50
+          right-4
+          z-10
+          w-58
+          sm:w-36
+          md:w-49
+          lg:w-100
+          pointer-events-none
+          select-none
+        "
+        />
       </Container>
 
     </section>
