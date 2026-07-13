@@ -54,18 +54,18 @@ const FreeTemplates = () => {
               src={arrow}
               alt=""
               className="
-      mt-1
-      w-36
-      self-end
-      -translate-x-2
+    hidden
+    sm:block
 
-      sm:w-[220px]
-      sm:translate-x-2
+    mt-1
+    w-[220px]
+    self-end
+    translate-x-2
 
-      select-none
-      pointer-events-none
-      opacity-90
-    "
+    select-none
+    pointer-events-none
+    opacity-90
+  "
             />
           </div>
 
@@ -110,9 +110,10 @@ const FreeTemplates = () => {
         onMouseMove={handleMouseMove}
         className="
     flex
-    gap-7
+    gap-5
     overflow-x-auto
     overflow-y-hidden
+        overflow-x-hidden
     pb-4
     scroll-smooth
     snap-x
@@ -120,13 +121,20 @@ const FreeTemplates = () => {
     cursor-grab
     active:cursor-grabbing
     select-none
-    scrollbar-hide overflow-x-hidden
+    touch-pan-x
+    [-webkit-overflow-scrolling:touch]
+    scrollbar-hide
   "
       >
         {templates.map((template) => (
           <div
             key={template.id}
-            className="snap-start shrink-0"
+            className="
+      snap-center
+      shrink-0
+      w-[85vw]
+      sm:w-[330px]
+    "
           >
             <TemplateCard template={template} />
           </div>
