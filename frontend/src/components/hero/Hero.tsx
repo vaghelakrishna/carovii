@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 import Container from "../layout/Container";
-
+import purplebg from "../../assets/images/purplebg.png";
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 ">
-    {/* <section className="relative overflow-hidden py-16 md:py-24" style={{
-      backgroundImage: "url('./src/assets/images/bg.png')"
-    }}> */}
+    // <section className="relative overflow-hidden py-16 md:py-24 ">
+    <section
+      className="
+    relative
+    overflow-hidden
+    py-16
+    md:py-24
+    bg-cover
+    bg-center
+    bg-no-repeat
+  "
+      style={{
+        backgroundImage: `url(${purplebg})`,
+      }}
+    >
       <Container>
 
         {/* Brand */}
