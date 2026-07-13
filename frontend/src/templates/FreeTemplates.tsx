@@ -36,7 +36,7 @@ const FreeTemplates = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
   return (
-    <section className="py-24 px-20">
+    <section className="py-24 px-6">
 
       <div className="mb-10 flex items-end justify-between">
 
