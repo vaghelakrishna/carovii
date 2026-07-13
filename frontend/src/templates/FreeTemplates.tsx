@@ -128,7 +128,7 @@ const FreeTemplates = () => {
     flex
     gap-7
     overflow-x-auto
-    overflow-x-hidden
+    hide-scrollbar
     overflow-y-hidden
     pb-4
     snap-x
