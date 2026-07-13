@@ -45,18 +45,23 @@ const FreeTemplates = () => {
           <span className="rounded-full bg-violet-100 px-4 py-2 text-sm font-semibold text-violet-700">
             Free Resources
           </span>
-
-          <div className="inline-flex flex-col items-center mt-2">
-            <h2 className="text-5xl font-black tracking-tight text-slate-900">
+          <div className="mt-2 inline-flex flex-col items-center">
+            <h2 className="text-center text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               Free Instagram Templates
             </h2>
 
             <img
-              src={ arrow}// apna path yaha do
+              src={arrow}
               alt=""
               className="
-      ml-85
-      w-[220px]
+      mt-1
+      w-36
+      self-end
+      -translate-x-2
+
+      sm:w-[220px]
+      sm:translate-x-2
+
       select-none
       pointer-events-none
       opacity-90
