@@ -153,28 +153,28 @@ const Hero = () => {
 
         </motion.div>
 
-        {/* Cat */}
-        <video
-          src={catty}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="
+      </Container>
+
+      {/* Cat */}
+      <video
+        src={catty}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="
           absolute
-          -bottom-50
+          -bottom-30
           right-4
           z-10
-          w-58
+          w-60
           sm:w-36
-          md:w-49
+          md:w-52
           lg:w-100
           pointer-events-none
           select-none
         "
-        />
-      </Container>
-
+      />
     </section>
   );
 };
