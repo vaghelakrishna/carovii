@@ -10,6 +10,10 @@ import june_dump2 from "../assets/images/june_dump/slide-2.png";
 import june_dump3 from "../assets/images/june_dump/slide-3.png";
 import june_dump4 from "../assets/images/june_dump/slide-4.png";
 
+import slide1 from "../assets/images/gradute_dump/slide-1.png";
+import slide2 from "../assets/images/gradute_dump/slide-2.png";
+import slide3 from "../assets/images/gradute_dump/slide-3.png";
+import slide4 from "../assets/images/gradute_dump/slide-4.png";
 
 import free1 from "../assets/images/june_dump/FREE1.png";
 import free2 from "../assets/images/june_dump/FREE2.png";
@@ -57,19 +61,20 @@ export const templates = [
     likes: "2,103",
     url: "https://instagram.com/",
   },
-  // {
-  //   id: 4,
-  //   username: "krishnacreates.design",
-  //   profile: "./src/assets/images/cutie.png",
-  //   images: [
-  //     "/templates/1.jpg",
-  //     "/templates/2.jpg",
-  //     "/templates/3.jpg",
-  //   ],
-  //   caption: "Travel Story Template 🌎",
-  //   likes: "2,103",
-  //   url: "https://instagram.com/",
-  // },
+  {
+    id: 4,
+    username: "krishnacreates.design",
+    profile: "./src/assets/images/cutie.png",
+    images: [
+      slide1,
+      slide2,
+      slide3,
+      slide4,
+    ],
+    caption: "Gradution Day Template 🌎",
+    likes: "2,103",
+    url: "https://instagram.com/",
+  },
 
 
 ];
