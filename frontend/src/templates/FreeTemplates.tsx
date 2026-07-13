@@ -1,8 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import TemplateCard from "./TemplateCard";
 import { templates } from "./templateData";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import arrow from "../assets/illustations/arrow.png";
+
+
 const FreeTemplates = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   
@@ -10,6 +12,20 @@ const FreeTemplates = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
   
@@ -104,26 +120,24 @@ const FreeTemplates = () => {
 
       <div
         ref={scrollRef}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
+        onMouseDown={!isMobile ? handleMouseDown : undefined}
+        onMouseLeave={!isMobile ? handleMouseLeave : undefined}
+        onMouseUp={!isMobile ? handleMouseUp : undefined}
+        onMouseMove={!isMobile ? handleMouseMove : undefined}
         className="
     flex
-    gap-5
+    gap-7
     overflow-x-auto
+    overflow-x-hidden
     overflow-y-hidden
-        overflow-x-hidden
     pb-4
-    scroll-smooth
     snap-x
     snap-mandatory
-    cursor-grab
-    active:cursor-grabbing
-    select-none
+    scrollbar-hide
     touch-pan-x
     [-webkit-overflow-scrolling:touch]
-    scrollbar-hide
+    md:cursor-grab
+    md:active:cursor-grabbing
   "
       >
         {templates.map((template) => (
