@@ -62,7 +62,7 @@ const FreeTemplates = () => {
             Free Resources
           </span>
           <div className="mt-2 inline-flex flex-col items-center">
-            <h2 className="text-center text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className=" text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               Free Instagram Templates
             </h2>
 
