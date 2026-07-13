@@ -13,7 +13,7 @@ const PreviewPanel = () => {
     const link = document.createElement("a");
 
     link.href = src;
-    link.download = `carovii-slide-${index + 1}.png`;
+    link.download = `slide-${index + 1}.png`;
     link.click();
   };
 
