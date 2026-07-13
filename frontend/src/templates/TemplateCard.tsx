@@ -39,34 +39,34 @@ const TemplateCard = ({ template }: Props) => {
   };
   return (
     <motion.a
-      whileHover={{
-        y: -8,
-      }}
-      transition={{
-        duration: .25,
-      }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.25 }}
       href={template.url}
       target="_blank"
       rel="noreferrer"
       className="
-      group
-      w-[330px]
-      shrink-0
-      overflow-hidden
-      rounded-[34px]
-      border
-      border-[#ECEAF3]
-      bg-white
-      shadow-sm
-      transition-all
-      duration-300
-      hover:border-violet-200
-      hover:shadow-2xl
-      "
+    group
+    w-full
+    max-w-[330px]
+
+    md:w-[330px]
+
+    flex-shrink-0
+    overflow-hidden
+    rounded-[30px]
+    border
+    border-[#ECEAF3]
+    bg-white
+    shadow-sm
+    transition-all
+    duration-300
+    hover:border-violet-200
+    hover:shadow-2xl
+  "
     >
       {/* Header */}
 
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between p-3 sm:p-4">
 
         <div className="flex items-center gap-3">
 
@@ -78,7 +78,7 @@ const TemplateCard = ({ template }: Props) => {
 
           <div>
 
-            <h4 className="text-sm font-semibold text-slate-900">
+            <h4 className="text-[15px] font-semibold text-slate-900">
               {template.username}
             </h4>
 
@@ -90,7 +90,7 @@ const TemplateCard = ({ template }: Props) => {
 
         </div>
 
-        <button className="text-2xl leading-none text-slate-500">
+        <button className="text-xl leading-none text-slate-500">
           •••
         </button>
 
@@ -108,39 +108,40 @@ const TemplateCard = ({ template }: Props) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25 }}
           className="
-    h-[390px]
-    w-full
-    object-cover
-    group-hover:scale-105
-  "
+        h-[350px]
+        sm:h-[390px]
+        w-full
+        object-cover
+        transition-transform
+        duration-500
+        group-hover:scale-105
+      "
         />
-
-        {/* Left / Right */}
 
         {template.images.length > 1 && (
           <>
             <button
               onClick={prevImage}
               className="
-          absolute
-          left-3
-          top-1/2
-          z-20
-          flex
-          h-8
-          w-8
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-full
-          bg-white/95
-          shadow-lg
-          opacity-0
-          transition-all
-          duration-200
-          group-hover:opacity-100
-          hover:scale-110
-        "
+            absolute
+            left-2
+            sm:left-3
+            top-1/2
+            z-20
+            flex
+            h-8
+            w-8
+            -translate-y-1/2
+            items-center
+            justify-center
+            rounded-full
+            bg-white/95
+            shadow-lg
+            opacity-100
+            sm:opacity-0
+            sm:group-hover:opacity-100
+            transition
+          "
             >
               ‹
             </button>
@@ -148,30 +149,28 @@ const TemplateCard = ({ template }: Props) => {
             <button
               onClick={nextImage}
               className="
-          absolute
-          right-3
-          top-1/2
-          z-20
-          flex
-          h-8
-          w-8
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-full
-          bg-white/95
-          shadow-lg
-          opacity-0
-          transition-all
-          duration-200
-          group-hover:opacity-100
-          hover:scale-110
-        "
+            absolute
+            right-2
+            sm:right-3
+            top-1/2
+            z-20
+            flex
+            h-8
+            w-8
+            -translate-y-1/2
+            items-center
+            justify-center
+            rounded-full
+            bg-white/95
+            shadow-lg
+            opacity-100
+            sm:opacity-0
+            sm:group-hover:opacity-100
+            transition
+          "
             >
               ›
             </button>
-
-            {/* Dots */}
 
             <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
               {template.images.map((_: any, index: number) => (
@@ -188,20 +187,6 @@ const TemplateCard = ({ template }: Props) => {
         )}
 
       </div>
-
-      {template.images.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-          {template.images.map((_: any, index: number) => (
-            <div
-              key={index}
-              className={`h-1.5 rounded-full transition-all ${currentImage === index
-                  ? "w-5 bg-white"
-                  : "w-1.5 bg-white/60"
-                }`}
-            />
-          ))}
-        </div>
-      )}
 
       {/* Actions */}
 
@@ -229,7 +214,7 @@ const TemplateCard = ({ template }: Props) => {
           {template.likes} likes
         </p>
 
-        <p className="mt-2 text-sm leading-6 text-slate-700">
+        <p className="mt-2 line-clamp-2 text-[13px] leading-6 text-slate-700 sm:text-sm">
 
           <span className="font-semibold">
             {template.username}
@@ -239,7 +224,7 @@ const TemplateCard = ({ template }: Props) => {
 
         </p>
 
-        <p className="mt-4 font-semibold text-violet-700">
+        <p className="mt-4 text-sm font-semibold text-violet-700">
           View on Instagram →
         </p>
 
