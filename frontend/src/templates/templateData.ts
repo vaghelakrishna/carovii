@@ -57,7 +57,7 @@ export const templates = [
       free1,
       free2,
     ],
-    caption: "Travel Story Template 🌎",
+    caption: "Free June Template 🌎",
     likes: "2,103",
     url: "https://instagram.com/",
   },
