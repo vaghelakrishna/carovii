@@ -1,5 +1,5 @@
 const Footer = () => {
-  const visitors = "2,541"; // Replace with real visitor count
+  // const visitors = "2,541"; // Replace with real visitor count
 
   return (
     <footer className="border-t border-[#ECEAF3] bg-[#FCFBFF]">
