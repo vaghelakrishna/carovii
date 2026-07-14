@@ -41,7 +41,7 @@ const Footer = () => {
             Pinterest
           </a>
 
-          <span>✦</span>
+          {/* <span>✦</span> */}
 {/* 
           <a className="transition hover:text-violet-600" href="#">
             Buy me a coffee
