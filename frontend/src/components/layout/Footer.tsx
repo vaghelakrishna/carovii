@@ -42,10 +42,10 @@ const Footer = () => {
           </a>
 
           <span>✦</span>
-
+{/* 
           <a className="transition hover:text-violet-600" href="#">
             Buy me a coffee
-          </a>
+          </a> */}
         </div>
 
         {/* Bottom */}
