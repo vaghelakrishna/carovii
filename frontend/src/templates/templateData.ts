@@ -17,11 +17,13 @@ import slide4 from "../assets/images/gradute_dump/slide-4.png";
 
 import free1 from "../assets/images/june_dump/FREE1.png";
 import free2 from "../assets/images/june_dump/FREE2.png";
+
+import cutie from "../assets/images/cutie.png";
 export const templates = [
   {
     id: 1,
     username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
+    profile: cutie,
     images: [
       today_dump1,
       today_dump2,
@@ -37,7 +39,7 @@ export const templates = [
   {
     id: 2,
     username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
+    profile: cutie,
   images: [
     june_dump1,
     june_dump2,
@@ -52,7 +54,7 @@ export const templates = [
   {
     id: 3,
     username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
+    profile: cutie,
     images: [
       free1,
       free2,
@@ -64,7 +66,7 @@ export const templates = [
   {
     id: 4,
     username: "krishnacreates.design",
-    profile: "./src/assets/images/cutie.png",
+    profile: cutie,
     images: [
       slide1,
       slide2,
