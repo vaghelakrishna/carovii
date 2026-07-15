@@ -17,7 +17,6 @@ const VideoMaker = () => {
   const [duration, setDuration] = useState(10);
 
   const [loading, setLoading] = useState(false);
-  const [slides, setSlides] = useState(5);
   const [videoUrl, setVideoUrl] = useState("");
 
   const handleGenerate = async () => {
@@ -35,7 +34,6 @@ const VideoMaker = () => {
         image,
         direction,
         duration,
-        slides,
       });
 
       setVideoUrl(url);
