@@ -1,6 +1,6 @@
-import UploadPanel from "./UploadPanel";
-import SettingsPanel from "./SettingsPanel";
-import PreviewPanel from "./PreviewPanel";
+import UploadPanel from "./CarouselSplitter/UploadPanel";
+import SettingsPanel from "./CarouselSplitter/SettingsPanel";
+import PreviewPanel from "./CarouselSplitter/PreviewPanel";
 
 import Container from "../layout/Container";
 
