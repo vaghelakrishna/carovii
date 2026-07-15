@@ -74,7 +74,7 @@ const PreviewPanel = ({
             animate={{ opacity: 1 }}
             className="px-8 text-center"
           >
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-violet-100">
+            <div className="mx-auto flex h-20 w-40 items-center justify-center rounded-full bg-violet-100">
               <Video
                 size={34}
                 className="text-violet-600"
