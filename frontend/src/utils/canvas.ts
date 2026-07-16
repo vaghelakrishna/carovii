@@ -1,106 +1,49 @@
 export type CarouselFormat = "portrait" | "square";
 
-const INSTAGRAM = {
-  portrait: {
-    width: 1080,
-    height: 1350,
-  },
-
-  square: {
-    width: 1080,
-    height: 1080,
-  },
+const INSTAGRAM: Record<CarouselFormat, { width: number; height: number }> = {
+  portrait: { width: 1080, height: 1350 },
+  square: { width: 1080, height: 1080 },
 };
 
-export const splitImage = (
-  file: File,
-  slides: number,
-  format: CarouselFormat
-): Promise<string[]> => {
-  return new Promise((resolve, reject) => {
+export const splitImage = (file: File, slides: number, format: CarouselFormat): Promise<string[]> =>
+  new Promise((resolve, reject) => {
     const img = new Image();
+    const url = URL.createObjectURL(file);
 
+    img.onerror = reject;
     img.onload = () => {
-      const target = INSTAGRAM[format];
-
-      const totalWidth = target.width * slides;
-      const totalHeight = target.height;
+      const { width: tw, height: th } = INSTAGRAM[format];
+      const totalWidth = tw * slides;
 
       const canvas = document.createElement("canvas");
-
       canvas.width = totalWidth;
-      canvas.height = totalHeight;
+      canvas.height = th;
 
       const ctx = canvas.getContext("2d");
+      if (!ctx) { URL.revokeObjectURL(url); reject(new Error("Canvas not supported")); return; }
 
-      if (!ctx) {
-        reject("Canvas not supported");
-        return;
-      }
+      const ir = img.width / img.height;
+      const cr = totalWidth / th;
+      const [dw, dh, ox, oy] = ir > cr
+        ? [th * ir, th, -(th * ir - totalWidth) / 2, 0]
+        : [totalWidth, totalWidth / ir, 0, -(totalWidth / ir - th) / 2];
 
-      const imageRatio = img.width / img.height;
-      const canvasRatio = totalWidth / totalHeight;
-
-      let drawWidth = totalWidth;
-      let drawHeight = totalHeight;
-
-      let offsetX = 0;
-      let offsetY = 0;
-
-      if (imageRatio > canvasRatio) {
-        drawHeight = totalHeight;
-        drawWidth = drawHeight * imageRatio;
-
-        offsetX = -(drawWidth - totalWidth) / 2;
-      } else {
-        drawWidth = totalWidth;
-        drawHeight = drawWidth / imageRatio;
-
-        offsetY = -(drawHeight - totalHeight) / 2;
-      }
-
-      ctx.drawImage(
-        img,
-        offsetX,
-        offsetY,
-        drawWidth,
-        drawHeight
-      );
+      ctx.drawImage(img, ox, oy, dw, dh);
+      URL.revokeObjectURL(url);
 
       const slices: string[] = [];
-
       for (let i = 0; i < slides; i++) {
-        const sliceCanvas = document.createElement("canvas");
-
-        sliceCanvas.width = target.width;
-        sliceCanvas.height = target.height;
-
-        const sliceCtx = sliceCanvas.getContext("2d");
-
-        if (!sliceCtx) continue;
-
-        sliceCtx.drawImage(
-          canvas,
-          i * target.width,
-          0,
-          target.width,
-          target.height,
-          0,
-          0,
-          target.width,
-          target.height
-        );
-
-        slices.push(
-          sliceCanvas.toDataURL("image/png", 1)
-        );
+        const sc = document.createElement("canvas");
+        sc.width = tw;
+        sc.height = th;
+        const sctx = sc.getContext("2d");
+        if (!sctx) continue;
+        sctx.drawImage(canvas, i * tw, 0, tw, th, 0, 0, tw, th);
+        slices.push(sc.toDataURL("image/png", 1));
       }
 
       resolve(slices);
     };
 
-    img.onerror = reject;
-
-    img.src = URL.createObjectURL(file);
+    img.src = url;
   });
-};
