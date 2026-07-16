@@ -13,8 +13,6 @@ interface WorkspaceStore {
 
   slices: string[];
 
-  processing: boolean;
-
   setFile: (file: File | null) => void;
   setPreview: (preview: string | null) => void;
   setFileType: (type: FileType) => void;
@@ -23,8 +21,6 @@ interface WorkspaceStore {
   setFormat: (format: CarouselFormat) => void;
 
   setSlices: (slices: string[]) => void;
-
-  setProcessing: (processing: boolean) => void;
 
   reset: () => void;
 }
@@ -39,33 +35,22 @@ export const useWorkspaceStore = create<WorkspaceStore>((set) => ({
 
   slices: [],
 
-  processing: false,
-
   setFile: (file) => set({ file }),
-
   setPreview: (preview) => set({ preview }),
-
   setFileType: (fileType) => set({ fileType }),
 
   setSlides: (slides) => set({ slides }),
-
   setFormat: (format) => set({ format }),
 
   setSlices: (slices) => set({ slices }),
-
-  setProcessing: (processing) => set({ processing }),
 
   reset: () =>
     set({
       file: null,
       preview: null,
       fileType: null,
-
       slides: 5,
       format: "portrait",
-
       slices: [],
-
-      processing: false,
     }),
 }));
