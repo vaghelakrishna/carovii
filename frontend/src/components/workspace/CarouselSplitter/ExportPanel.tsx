@@ -1,8 +1,8 @@
 import { Archive, Download, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
-import Card from "../ui/Card";
-import { useWorkspaceStore } from "../../store/workspaceStore";
-import { downloadZip } from "../../utils/download";
+import Card from "../../ui/Card";
+import { useWorkspaceStore } from "../../../store/workspaceStore";
+import { downloadZip } from "../../../utils/download";
 
 const ExportPanel = () => {
   const { slices } = useWorkspaceStore();
