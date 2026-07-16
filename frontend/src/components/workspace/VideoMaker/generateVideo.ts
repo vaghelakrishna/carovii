@@ -94,77 +94,36 @@ export async function generateVideo({
     }
   };
 
-  recorder.start(100);
-
   const start = performance.now();
 
-  // ============================================
-  // Part 2 starts from here
-  // ============================================
-
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
 
     recorder.onstop = () => {
-      const blob = new Blob(chunks, {
-        type: "video/webm",
-      });
+      stream.getTracks().forEach((t) => t.stop());
+      const blob = new Blob(chunks, { type: "video/webm" });
       URL.revokeObjectURL(img.src);
       resolve(URL.createObjectURL(blob));
     };
 
-    // Rendering Part 2
+    recorder.onerror = (e) => reject(e);
+
+    recorder.start(100);
 
     function render(now: number) {
       const elapsed = (now - start) / 1000;
-
-
       const progress = Math.min(elapsed / duration, 1);
-      // const rawProgress = Math.min(elapsed / duration, 1);
-
-      // Ease In Out Cubic
-      // const progress =
-      //   rawProgress < 0.5
-      //     ? 4 * rawProgress * rawProgress * rawProgress
-      //     : 1 - Math.pow(-2 * rawProgress + 2, 3) / 2;
 
       ctx.clearRect(0, 0, viewportWidth, viewportHeight);
 
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+
       if (direction === "horizontal") {
-        // Smooth left → right
         const sourceX = Math.round(progress * maxScrollX);
-
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = "high";
-
-        ctx.drawImage(
-          img,
-          sourceX,
-          0,
-          viewportWidth,
-          viewportHeight,
-          0,
-          0,
-          viewportWidth,
-          viewportHeight
-        );
+        ctx.drawImage(img, sourceX, 0, viewportWidth, viewportHeight, 0, 0, viewportWidth, viewportHeight);
       } else {
-        // Smooth top → bottom
         const sourceY = Math.round(progress * maxScrollY);
-
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = "high";
-
-        ctx.drawImage(
-          img,
-          0,
-          sourceY,
-          viewportWidth,
-          viewportHeight,
-          0,
-          0,
-          viewportWidth,
-          viewportHeight
-        );
+        ctx.drawImage(img, 0, sourceY, viewportWidth, viewportHeight, 0, 0, viewportWidth, viewportHeight);
       }
 
       if (progress < 1) {
