@@ -37,6 +37,9 @@ const UploadPanel = ({
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: {
       "image/*": [],
+      "video/mp4": [],
+      "video/webm": [],
+      "video/quicktime": [], // .mov
     },
     multiple: false,
     noClick: true,
@@ -88,12 +91,11 @@ const UploadPanel = ({
             </div>
 
             <h2 className="mt-6 text-3xl font-black text-slate-900">
-              Upload Image
+              Upload Media
             </h2>
 
             <p className="mt-3 max-w-xs text-sm leading-6 text-slate-500">
-              Drag & drop your carousel image here or choose it from your
-              computer.
+              Drag & drop your carousel image or video here.
             </p>
 
             <button
@@ -123,11 +125,20 @@ const UploadPanel = ({
             animate={{ opacity: 1 }}
           >
             <div className="overflow-hidden rounded-[28px] border bg-[#FAFAFA]">
-              <img
-                src={preview}
-                alt=""
-                className="h-[430px] w-full object-contain"
-              />
+                {image?.type.startsWith("video/") ? (
+                  <video
+                    src={preview}
+                    controls
+                    playsInline
+                    className="h-[430px] w-full object-contain rounded-[28px]"
+                  />
+                ) : (
+                  <img
+                    src={preview}
+                    alt=""
+                    className="h-[430px] w-full object-contain"
+                  />
+                )}
             </div>
 
             <div className="mt-5 flex gap-3">
